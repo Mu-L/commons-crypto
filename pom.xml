@@ -18,7 +18,7 @@
   <parent>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-parent</artifactId>
-    <version>71</version>
+    <version>72</version>
   </parent>
 
   <artifactId>commons-crypto</artifactId>
@@ -574,7 +574,7 @@ The following provides more details on the included cryptographic software:
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>taglist-maven-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.1.0</version>
         <configuration>
           <tagListOptions>
             <tagClasses>
@@ -656,15 +656,9 @@ The following provides more details on the included cryptographic software:
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest</artifactId>
-      <version>2.2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.15.0</version>
+      <version>3.16.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
