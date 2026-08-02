@@ -62,7 +62,7 @@ public final class IoUtils {
      * @param buffer The buffer to be read.
      * @param length The maximum number of bytes to read.
      * @param offset The start offset in array buffer.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     public static void readFully(final Input in, final long position, final byte[] buffer,
             final int offset, final int length) throws IOException {
@@ -85,7 +85,7 @@ public final class IoUtils {
      * @param buf The buffer to be read.
      * @param off The start offset in array buffer.
      * @param len The maximum number of bytes to read.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     public static void readFully(final InputStream in, final byte[] buf, int off, final int len)
             throws IOException {

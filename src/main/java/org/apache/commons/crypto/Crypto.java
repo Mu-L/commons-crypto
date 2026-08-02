@@ -184,7 +184,7 @@ public final class Crypto {
      * The Main of Crypto.
      *
      * @param args Not used.
-     * @throws Exception if getCryptoRandom or getCryptoCipher get error.
+     * @throws Exception Thrown if getCryptoRandom or getCryptoCipher get error.
      */
     public static void main(final String[] args) throws Exception {
         quiet = args.length == 1 && args[0].equals("-q");

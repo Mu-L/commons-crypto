@@ -90,7 +90,7 @@ public class CryptoOutputStream extends OutputStream implements
      * @param bufferSize The bufferSize.
      * @param key crypto key for the cipher.
      * @param params The algorithm parameters.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected CryptoOutputStream(final Output output, final CryptoCipher cipher,
             final int bufferSize, final Key key, final AlgorithmParameterSpec params)
@@ -124,7 +124,7 @@ public class CryptoOutputStream extends OutputStream implements
      * @param bufferSize The bufferSize.
      * @param key crypto key for the cipher.
      * @param params The algorithm parameters.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // Closing the instance closes the StreamOutput
     protected CryptoOutputStream(final OutputStream outputStream, final CryptoCipher cipher,
@@ -145,7 +145,7 @@ public class CryptoOutputStream extends OutputStream implements
      * @param outputStream The output stream.
      * @param key crypto key for the cipher.
      * @param params The algorithm parameters.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // The CryptoCipher returned by getCipherInstance() is closed by CryptoOutputStream.
     public CryptoOutputStream(final String transformation,
@@ -168,7 +168,7 @@ public class CryptoOutputStream extends OutputStream implements
      * @param out The WritableByteChannel instance.
      * @param key crypto key for the cipher.
      * @param params The algorithm parameters.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // The CryptoCipher returned by getCipherInstance() is closed by CryptoOutputStream.
     public CryptoOutputStream(final String transformation,
@@ -187,7 +187,7 @@ public class CryptoOutputStream extends OutputStream implements
      * @param bufferSize The bufferSize.
      * @param key crypto key for the cipher.
      * @param params The algorithm parameters.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // Closing the instance closes the ChannelOutput
     protected CryptoOutputStream(final WritableByteChannel channel, final CryptoCipher cipher,
@@ -199,7 +199,7 @@ public class CryptoOutputStream extends OutputStream implements
     /**
      * Checks whether the stream is closed.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void checkStream() throws IOException {
         if (closed) {
@@ -211,7 +211,7 @@ public class CryptoOutputStream extends OutputStream implements
      * Overrides the {@link OutputStream#close()}. Closes this output stream and
      * releases any system resources associated with this stream.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public void close() throws IOException {
@@ -234,7 +234,7 @@ public class CryptoOutputStream extends OutputStream implements
      * Does the encryption, input is {@link #inBuffer} and output is
      * {@link #outBuffer}.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void encrypt() throws IOException {
 
@@ -259,7 +259,7 @@ public class CryptoOutputStream extends OutputStream implements
     /**
      * Does final encryption of the last data.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void encryptFinal() throws IOException {
         inBuffer.flip();
@@ -285,7 +285,7 @@ public class CryptoOutputStream extends OutputStream implements
      * the data in the buffer and write to the underlying stream, then do the
      * flush.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public void flush() throws IOException {
@@ -340,7 +340,7 @@ public class CryptoOutputStream extends OutputStream implements
     /**
      * Initializes the cipher.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void initCipher() throws IOException {
         try {
@@ -370,7 +370,7 @@ public class CryptoOutputStream extends OutputStream implements
      * @param array The data.
      * @param off The start offset in the data.
      * @param len The number of bytes to write.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public void write(final byte[] array, int off, int len) throws IOException {
@@ -402,7 +402,7 @@ public class CryptoOutputStream extends OutputStream implements
      *
      * @param src The buffer from which bytes are to be retrieved.
      * @return The number of bytes written, possibly zero.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public int write(final ByteBuffer src) throws IOException {
@@ -438,7 +438,7 @@ public class CryptoOutputStream extends OutputStream implements
      * specified byte to this output stream.
      *
      * @param b The data.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public void write(final int b) throws IOException {

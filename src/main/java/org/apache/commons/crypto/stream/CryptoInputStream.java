@@ -87,7 +87,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * Checks whether the cipher is supported streaming.
      *
      * @param cipher The {@link CryptoCipher} instance.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     static void checkStreamCipher(final CryptoCipher cipher) throws IOException {
         if (!cipher.getAlgorithm().equals(AES.CTR_NO_PADDING)) {
@@ -152,7 +152,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * @param bufferSize The bufferSize.
      * @param key crypto key for the cipher.
      * @param params The algorithm parameters.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected CryptoInputStream(final Input input, final CryptoCipher cipher, final int bufferSize,
             final Key key, final AlgorithmParameterSpec params) throws IOException {
@@ -183,7 +183,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * @param bufferSize The bufferSize.
      * @param key crypto key for the cipher.
      * @param params The algorithm parameters.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // Closing the instance closes the StreamInput
     protected CryptoInputStream(final InputStream inputStream, final CryptoCipher cipher,
@@ -200,7 +200,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * @param bufferSize The bufferSize.
      * @param key crypto key for the cipher.
      * @param params The algorithm parameters.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // Closing the instance closes the ChannelInput
     protected CryptoInputStream(final ReadableByteChannel channel, final CryptoCipher cipher,
@@ -221,7 +221,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * @param inputStream The input stream.
      * @param key crypto key for the cipher.
      * @param params The algorithm parameters.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // The CryptoCipher returned by getCipherInstance() is closed by CryptoInputStream.
     public CryptoInputStream(final String transformation,
@@ -242,7 +242,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * @param channel The ReadableByteChannel object.
      * @param key crypto key for the cipher.
      * @param params The algorithm parameters.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // The CryptoCipher returned by getCipherInstance() is closed by CryptoInputStream.
     public CryptoInputStream(final String transformation,
@@ -260,7 +260,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * @return An estimate of the number of bytes that can be read (or skipped
      *         over) from this input stream without blocking or {@code 0} when
      *         it reaches the end of the input stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public int available() throws IOException {
@@ -272,7 +272,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
     /**
      * Checks whether the stream is closed.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void checkStream() throws IOException {
         if (closed) {
@@ -284,7 +284,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * Overrides the {@link InputStream#close()}. Closes this input stream and
      * releases any system resources associated with the stream.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public void close() throws IOException {
@@ -304,7 +304,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * return, inBuffer is cleared; the decrypted data starts at
      * outBuffer.position() and ends at outBuffer.limit().
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void decrypt() throws IOException {
         // Prepare the input buffer and clear the out buffer
@@ -325,7 +325,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
     /**
      * Does final of the cipher to end the decrypting stream.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void decryptFinal() throws IOException {
         // Prepare the input buffer and clear the out buffer
@@ -352,7 +352,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * @return The number of decrypted data.
      *           return -1 (if end of the decrypted stream)
      *           return 0 (no data now, but could have more later)
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected int decryptMore() throws IOException {
         if (finalDone) {
@@ -435,7 +435,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
     /**
      * Initializes the cipher.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void initCipher() throws IOException {
         try {
@@ -472,7 +472,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      *
      * @return The next byte of data, or {@code EOS (-1)} if the end of the
      *         stream is reached.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public int read() throws IOException {
@@ -494,7 +494,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * @param len The maximum number of decrypted data bytes to read.
      * @return int the total number of decrypted data bytes read into the
      *         buffer.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public int read(final byte[] array, final int off, final int len) throws IOException {
@@ -537,7 +537,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      * @param dst The buffer into which bytes are to be transferred.
      * @return The number of bytes read, possibly zero, or {@code EOS (-1)} if the
      *         channel has reached end-of-stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public int read(final ByteBuffer dst) throws IOException {
@@ -576,7 +576,7 @@ public class CryptoInputStream extends InputStream implements ReadableByteChanne
      *
      * @param n The number of bytes to be skipped.
      * @return The actual number of bytes skipped.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public long skip(final long n) throws IOException {

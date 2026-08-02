@@ -163,7 +163,7 @@ public final class Utils {
      * See the Java Cryptography Architecture Standard Algorithm Name Documentation
      * for information about standard transformation names.
      * @return The CryptoCipher instance.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     public static CryptoCipher getCipherInstance(final String transformation, final Properties properties) throws IOException {
         try {

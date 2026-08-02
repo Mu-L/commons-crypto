@@ -38,7 +38,7 @@ public interface Output extends Closeable {
      * Closes this output and releases any system resources associated with the
      * under layer output.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     void close() throws IOException;
@@ -51,7 +51,7 @@ public interface Output extends Closeable {
      * stream, such bytes should immediately be written to their intended
      * destination.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     void flush() throws IOException;
 

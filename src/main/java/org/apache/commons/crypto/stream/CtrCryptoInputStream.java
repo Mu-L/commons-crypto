@@ -128,7 +128,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param bufferSize The bufferSize.
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected CtrCryptoInputStream(final Input input, final CryptoCipher cipher,
             final int bufferSize, final byte[] key, final byte[] iv) throws IOException {
@@ -144,7 +144,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
      * @param streamOffset The start offset in the stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected CtrCryptoInputStream(final Input input, final CryptoCipher cipher,
             final int bufferSize, final byte[] key, final byte[] iv, final long streamOffset)
@@ -168,7 +168,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param bufferSize The bufferSize.
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected CtrCryptoInputStream(final InputStream inputStream, final CryptoCipher cipher,
             final int bufferSize, final byte[] key, final byte[] iv) throws IOException {
@@ -184,7 +184,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
      * @param streamOffset The start offset in the stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // Closing the instance closes the StreamInput
     protected CtrCryptoInputStream(final InputStream inputStream, final CryptoCipher cipher,
@@ -202,7 +202,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param inputStream The input stream.
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     public CtrCryptoInputStream(final Properties properties, final InputStream inputStream, final byte[] key,
             final byte[] iv) throws IOException {
@@ -218,7 +218,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
      * @param streamOffset The start offset in the stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // The CryptoCipher returned by getCipherInstance() is closed by CtrCryptoInputStream.
     public CtrCryptoInputStream(final Properties properties, final InputStream inputStream, final byte[] key,
@@ -236,7 +236,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param channel The ReadableByteChannel instance.
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     public CtrCryptoInputStream(final Properties properties, final ReadableByteChannel channel,
             final byte[] key, final byte[] iv) throws IOException {
@@ -252,7 +252,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
      * @param streamOffset The start offset in the stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // The CryptoCipher returned by getCipherInstance() is closed by CtrCryptoInputStream.
     public CtrCryptoInputStream(final Properties properties, final ReadableByteChannel in,
@@ -270,7 +270,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param bufferSize The bufferSize.
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected CtrCryptoInputStream(final ReadableByteChannel channel, final CryptoCipher cipher,
             final int bufferSize, final byte[] key, final byte[] iv) throws IOException {
@@ -286,7 +286,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
      * @param streamOffset The start offset in the stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // Closing the instance closes the ChannelInput
     protected CtrCryptoInputStream(final ReadableByteChannel channel, final CryptoCipher cipher,
@@ -300,7 +300,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * return, inBuffer is cleared; the decrypted data starts at
      * outBuffer.position() and ends at outBuffer.limit().
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     protected void decrypt() throws IOException {
@@ -333,7 +333,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param buf The buffer into which bytes are to be transferred.
      * @param offset The start offset in the data.
      * @param len The maximum number of decrypted data bytes to read.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void decrypt(final ByteBuffer buf, final int offset, final int len)
             throws IOException {
@@ -362,7 +362,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * Does the decryption using out as output.
      *
      * @param out The output ByteBuffer.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void decryptBuffer(final ByteBuffer out) throws IOException {
         final int inputSize = inBuffer.remaining();
@@ -390,7 +390,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * limit will not have changed.
      *
      * @param buf The buffer into which bytes are to be transferred.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void decryptInPlace(final ByteBuffer buf) throws IOException {
         Utils.checkState(inBuffer.position() >= padding);
@@ -412,7 +412,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * will be put in the output buffer.
      *
      * @return The number of decrypted data. -1 if end of the decrypted stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     protected int decryptMore() throws IOException {
@@ -490,7 +490,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      *
      * @param position The given position in the data.
      * @return The byte.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected byte postDecryption(final long position) throws IOException {
         byte padding = 0;
@@ -515,7 +515,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * @param buf The buffer into which bytes are to be transferred.
      * @return The number of bytes read, possibly zero, or {@code -1} if the
      *         channel has reached end-of-stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public int read(final ByteBuffer buf) throws IOException {
@@ -558,7 +558,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * Calculates the counter and iv, resets the cipher.
      *
      * @param position The given position in the data.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void resetCipher(final long position) throws IOException {
         final long counter = getCounter(position);
@@ -576,7 +576,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * {@link #outBuffer}. This Typically happens during {@link #skip(long)}.
      *
      * @param offset The offset of the stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void resetStreamOffset(final long offset) throws IOException {
         streamOffset = offset;
@@ -593,7 +593,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      * layer stream.
      *
      * @param position The given position in the data.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     public void seek(final long position) throws IOException {
         Utils.checkArgument(position >= 0, "Cannot seek to negative offset.");
@@ -628,7 +628,7 @@ public class CtrCryptoInputStream extends CryptoInputStream {
      *
      * @param n The number of bytes to be skipped.
      * @return The actual number of bytes skipped.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public long skip(long n) throws IOException {

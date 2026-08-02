@@ -48,7 +48,7 @@ public class ChannelOutput implements Output {
      * Overrides the {@link Output#close()}. Closes this output and releases any
      * system resources associated with the under layer output.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public void close() throws IOException {
@@ -60,7 +60,7 @@ public class ChannelOutput implements Output {
      * buffered output bytes to be written out if the under layer output method
      * support.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public void flush() throws IOException {
@@ -74,7 +74,7 @@ public class ChannelOutput implements Output {
      *
      * @param src The buffer from which bytes are to be retrieved.
      * @return The number of bytes written, possibly zero.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public int write(final ByteBuffer src) throws IOException {

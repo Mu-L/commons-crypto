@@ -48,7 +48,7 @@ public interface Input extends Closeable {
      * @return An estimate of the number of bytes that can be read (or skipped
      *         over) from this input stream without blocking or {@code 0} when
      *         it reaches the end of the input stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     int available() throws IOException;
 
@@ -56,7 +56,7 @@ public interface Input extends Closeable {
      * Closes this input and releases any system resources associated with the
      * under layer input.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     void close() throws IOException;
@@ -102,7 +102,7 @@ public interface Input extends Closeable {
      * @return The total number of bytes read into the buffer, or
      *         {@code -1} if there is no more data because the end of the
      *         stream has been reached.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     int read(long position, byte[] buffer, int offset, int length)
             throws IOException;
@@ -115,7 +115,7 @@ public interface Input extends Closeable {
      * support seek, it throws UnsupportedOperationException.
      *
      * @param position The offset from the start of the stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     void seek(long position) throws IOException;
 
@@ -137,7 +137,7 @@ public interface Input extends Closeable {
      *
      * @param n The number of bytes to be skipped.
      * @return The actual number of bytes skipped.
-     * @throws IOException if the stream does not support seek, or if some
+     * @throws IOException Thrown if the stream does not support seek, or if some
      *            other I/O error occurs.
      */
     long skip(long n) throws IOException;

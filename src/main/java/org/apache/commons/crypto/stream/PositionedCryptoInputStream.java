@@ -108,7 +108,7 @@ public class PositionedCryptoInputStream extends CtrCryptoInputStream {
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
      * @param streamOffset The start offset in the data.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // The CryptoCipher returned by getCipherInstance() is closed by PositionedCryptoInputStream.
     public PositionedCryptoInputStream(final Properties properties, final Input in, final byte[] key,
@@ -126,7 +126,7 @@ public class PositionedCryptoInputStream extends CtrCryptoInputStream {
      * @param key crypto key for the cipher.
      * @param iv Initialization vector for the cipher.
      * @param streamOffset The start offset in the data.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected PositionedCryptoInputStream(final Properties properties, final Input input, final CryptoCipher cipher,
             final int bufferSize, final byte[] key, final byte[] iv, final long streamOffset)
@@ -155,7 +155,7 @@ public class PositionedCryptoInputStream extends CtrCryptoInputStream {
      * Overrides the {@link CryptoInputStream#close()}. Closes this input stream
      * and releases any system resources associated with the stream.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public void close() throws IOException {
@@ -177,7 +177,7 @@ public class PositionedCryptoInputStream extends CtrCryptoInputStream {
      * @param inByteBuffer The input buffer.
      * @param outByteBuffer The output buffer.
      * @param padding The padding.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     private void decrypt(final CipherState state, final ByteBuffer inByteBuffer,
             final ByteBuffer outByteBuffer, final byte padding) throws IOException {
@@ -208,7 +208,7 @@ public class PositionedCryptoInputStream extends CtrCryptoInputStream {
      * @param offset The start offset in the data.
      * @param position The offset from the start of the stream.
      * @param length The maximum number of bytes to read.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     protected void decrypt(final long position, final byte[] buffer, final int offset, final int length)
             throws IOException {
@@ -247,7 +247,7 @@ public class PositionedCryptoInputStream extends CtrCryptoInputStream {
      * @param state The CipherState instance.
      * @param inByteBuffer The input buffer.
      * @param outByteBuffer The output buffer.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // getCryptoCipher does not allocate
     private void decryptBuffer(final CipherState state, final ByteBuffer inByteBuffer,
@@ -284,7 +284,7 @@ public class PositionedCryptoInputStream extends CtrCryptoInputStream {
      * Gets CryptoCipher from pool. Caller MUST also call {@link #returnToPool(CipherState)}.
      *
      * @return The CipherState instance.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @SuppressWarnings("resource") // Caller calls #returnToPool(CipherState)
     private CipherState getCipherState() throws IOException {
@@ -328,7 +328,7 @@ public class PositionedCryptoInputStream extends CtrCryptoInputStream {
      * @param length The maximum number of bytes to read.
      * @param offset The start offset in the data.
      * @param position The offset from the start of the stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      * @return int the total number of decrypted data bytes read into the
      *         buffer.
      */
@@ -350,7 +350,7 @@ public class PositionedCryptoInputStream extends CtrCryptoInputStream {
      *
      * @param position The offset from the start of the stream.
      * @param buffer The buffer into which the data is read.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     public void readFully(final long position, final byte[] buffer) throws IOException {
         readFully(position, buffer, 0, buffer.length);
@@ -365,7 +365,7 @@ public class PositionedCryptoInputStream extends CtrCryptoInputStream {
      * @param length The maximum number of bytes to read.
      * @param offset The start offset in the data.
      * @param position The offset from the start of the stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     public void readFully(final long position, final byte[] buffer, final int offset, final int length)
             throws IOException {

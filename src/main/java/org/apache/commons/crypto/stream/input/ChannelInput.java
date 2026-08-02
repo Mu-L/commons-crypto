@@ -57,7 +57,7 @@ public class ChannelInput implements Input {
      * @return An estimate of the number of bytes that can be read (or skipped
      *         over) from this input stream without blocking or {@code 0} when
      *         it reaches the end of the input stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public int available() throws IOException {
@@ -70,7 +70,7 @@ public class ChannelInput implements Input {
      * this input and releases any system resources associated with the under
      * layer input.
      *
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public void close() throws IOException {
@@ -98,7 +98,7 @@ public class ChannelInput implements Input {
      * @return The total number of bytes read into the buffer, or
      *         {@code -1} if there is no more data because the end of the
      *         stream has been reached.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public int read(final ByteBuffer dst) throws IOException {
@@ -120,7 +120,7 @@ public class ChannelInput implements Input {
      * @return The total number of bytes read into the buffer, or
      *         {@code -1} if there is no more data because the end of the
      *         stream has been reached.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public int read(final long position, final byte[] buffer, final int offset, final int length)
@@ -136,7 +136,7 @@ public class ChannelInput implements Input {
      * from that location.
      *
      * @param position The offset from the start of the stream.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public void seek(final long position) throws IOException {
@@ -151,7 +151,7 @@ public class ChannelInput implements Input {
      *
      * @param n The number of bytes to be skipped.
      * @return The actual number of bytes skipped.
-     * @throws IOException if an I/O error occurs.
+     * @throws IOException Thrown if an I/O error occurs.
      */
     @Override
     public long skip(final long n) throws IOException {
